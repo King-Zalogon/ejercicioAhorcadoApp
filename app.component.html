@@ -1,0 +1,54 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Ave Omnissiah!
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col text-center">
+
+      <img src="assets/img/{{intentos}}.png" class="ahorcado-img">
+
+      <h3>Intentos <small> {{ intentos }} / 9 </small> </h3>
+
+  </div>
+</div>
+
+<div class="row">
+    <div class="col text-center">
+  
+        <h2> {{ palabraOculta }} </h2>
+  
+    </div>
+</div>
+
+<div class="row" *ngIf="gano">
+    <div class="col text-center">
+  
+        <h2> Felicidades Ganas!!! </h2>
+        <h3> :D </h3>
+  
+    </div>
+</div>
+
+<div class="row" *ngIf="perdio">
+    <div class="col text-center">
+  
+        <h2> Lo siento, perdiste... :( </h2>
+        <h3> La palabra era {{palabra}} </h3>
+  
+    </div>
+</div>
+
+<div class="row" *ngIf="!gano && !perdio">
+    <div class="col text-center">
+  
+
+        <button (click)="comprobar( letra )" *ngFor="let letra of letras" class="btn btn-primary"> 
+        {{ letra }}  
+        </button>
+      
+        
+    </div>
+</div>
